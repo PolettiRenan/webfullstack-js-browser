@@ -2,13 +2,19 @@ const listaDeAprendizadosUl = document.querySelector('#to-learn');
 let deveContinuar = true;
 const materias = [];
 
-while (deveContinuar) {
-    let materia = prompt('Entra com o nome da matéria(para sair aperte em OK sem nenhum valor) : ');
+function incluiMateriaNaLista() {
+    const materia = prompt('Entre com o nome da matéria (aperte em OK vazio para sair) : ');
 
-    if (!materia) 
-        deveContinuar = false;
-    else 
-        materias.push(materia);
+    if (!materia) {
+        deveContinuar = false
+        return 
+    }
+
+    materias.push(materia);
+}
+
+while (deveContinuar) {
+    incluiMateriaNaLista();
 }
 
 materias.forEach(materia => {
